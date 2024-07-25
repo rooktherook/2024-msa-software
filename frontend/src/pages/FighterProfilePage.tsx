@@ -4,7 +4,7 @@ import { Typography } from "@mui/material";
 const FighterProfilePage: React.FC = () => {
   return (
     <div>
-      <Typography variant="h4"></Typography>
+      <Typography variant="h4">Max Holloway</Typography>
     </div>
   );
 };
