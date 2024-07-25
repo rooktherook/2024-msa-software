@@ -1,4 +1,4 @@
-import { Students } from '../Models/Students';
+import { Students } from '../Types/Students';
 import config from '../Config';
 
 const { apiUrl } = config;
