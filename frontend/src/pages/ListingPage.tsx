@@ -4,7 +4,7 @@ import { Typography } from "@mui/material";
 const ListingPage: React.FC = () => {
   return (
     <div>
-      <Typography variant="h4">Login</Typography>
+      <Typography variant="h4">Hello</Typography>
     </div>
   );
 };

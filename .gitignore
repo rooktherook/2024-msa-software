@@ -671,6 +671,8 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
+/backend/privatekey.json
+
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
 

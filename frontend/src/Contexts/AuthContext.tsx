@@ -1,4 +1,5 @@
-import React, { createContext, useEffect, useState, ReactNode } from "react";
+/* eslint-disable react-hooks/rules-of-hooks */
+import React, { createContext, useEffect, useState, ReactNode, useContext } from "react";
 import { useLogin, useLogout, useUser } from "../Hooks";
 import { User } from "../Types/Entities";
 
@@ -84,4 +85,13 @@ const initialState = {
     );
   };
 
-export { AuthContext, AuthProvider };
+const useAuth = () => {
+    const context = useContext(AuthContext);
+    if (!context) {
+      throw new Error("useAuth must be used within an AuthProvider");
+    }
+    return context;
+};
+  
+
+export { AuthContext, AuthProvider, useAuth };

@@ -1,11 +1,18 @@
 import React from "react";
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+
+
+const dummy = [
+  "1",
+]
 
 const FighterProfilePage: React.FC = () => {
   return (
-    <div>
-      <Typography variant="h4">Max Holloway</Typography>
-    </div>
+    <Box>
+
+
+
+    </Box>
   );
 };
 
