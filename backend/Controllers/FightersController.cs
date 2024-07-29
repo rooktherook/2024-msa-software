@@ -16,7 +16,7 @@ namespace backend.Controllers
             _repository = repository;
         }
 
-        // GET: api/Students
+        // GET: api/Fighters
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Fighter>>> GetFighters()
         {

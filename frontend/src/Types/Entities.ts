@@ -19,11 +19,8 @@ interface Fighter {
     id: string;
 }
 
-interface User{
-    id: number;
-    name: string;
-}
+
 
 export type {
-    User, Fighter
+    Fighter
 }

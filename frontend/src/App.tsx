@@ -10,7 +10,6 @@ import { DataContextProvider } from "./Contexts/DataContext";
 import { AuthProvider } from "./Contexts/AuthContext";
 import Layout from "./Components/Layout";
 import HomePage from "./pages/HomePage";
-import LoginPage from "./pages/LoginPage";
 import ProfilePage from "./pages/ProfilePage";
 import FighterProfilePage from "./pages/FighterProfilePage";
 import ListingPage from "./pages/ListingPage";
@@ -27,7 +26,6 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<HomePage />} />
-              <Route path="login" element={<LoginPage />} />
               <Route path="profile" element={<ProfilePage />} />
               <Route path="fighter" element={<FighterProfilePage />} />
               <Route path="listing" element={<ListingPage />} />

@@ -13,9 +13,15 @@ namespace Repositories
             _context = context;
         }
 
+        public async Task AddPrediction(Prediction prediction)
+        {
+            _context.Predictions.Add(prediction);
+            await _context.SaveChangesAsync();
+        }
+
         public async Task<IEnumerable<Fighter>> GetAllFighters()
         {
-            return await _context.Fighter.ToListAsync();
+            return await _context.Fighters.ToListAsync();
         }
     }
 }
