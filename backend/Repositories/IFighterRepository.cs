@@ -7,5 +7,7 @@ namespace Repositories
     {
         Task AddPrediction(Prediction prediction);
         Task<IEnumerable<Fighter>> GetAllFighters();
+        Task<IEnumerable<Listranking>> GetRankings();
+
     }
 }

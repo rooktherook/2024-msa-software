@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
+import FavoriteStar from "../Components/FavoriteStar";
 
 
 const dummy = {
@@ -24,9 +25,9 @@ const dummy = {
 const FighterProfilePage: React.FC = () => {
   return (
     <Box>
-
-
-
+      <FavoriteStar userId={0} fighterId={0} isFavorite={false} onToggle={function (fighterId: number): void {
+        throw new Error("Function not implemented.");
+      } }></FavoriteStar>
     </Box>
   );
 };

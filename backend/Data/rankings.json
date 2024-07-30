@@ -1,0 +1,1010 @@
+[
+    {
+        "id": 1,
+        "weightclassid": "mens-pound-for-pound-top-rank",
+        "weightclassname": "Men's Pound-for-Pound Top Rank",
+        "ranking": 0,
+        "fighterid": "islam-makhachev"
+    },
+    {
+        "id": 2,
+        "weightclassid": "mens-pound-for-pound-top-rank",
+        "weightclassname": "Men's Pound-for-Pound Top Rank",
+        "ranking": 1,
+        "fighterid": "islam-makhachev"
+    },
+    {
+        "id": 3,
+        "weightclassid": "mens-pound-for-pound-top-rank",
+        "weightclassname": "Men's Pound-for-Pound Top Rank",
+        "ranking": 2,
+        "fighterid": "alex-pereira"
+    },
+    {
+        "id": 4,
+        "weightclassid": "mens-pound-for-pound-top-rank",
+        "weightclassname": "Men's Pound-for-Pound Top Rank",
+        "ranking": 3,
+        "fighterid": "jon-jones"
+    },
+    {
+        "id": 5,
+        "weightclassid": "mens-pound-for-pound-top-rank",
+        "weightclassname": "Men's Pound-for-Pound Top Rank",
+        "ranking": 4,
+        "fighterid": "leon-edwards"
+    },
+    {
+        "id": 6,
+        "weightclassid": "mens-pound-for-pound-top-rank",
+        "weightclassname": "Men's Pound-for-Pound Top Rank",
+        "ranking": 5,
+        "fighterid": "ilia-topuria"
+    },
+    {
+        "id": 7,
+        "weightclassid": "mens-pound-for-pound-top-rank",
+        "weightclassname": "Men's Pound-for-Pound Top Rank",
+        "ranking": 6,
+        "fighterid": "sean-omalley"
+    },
+    {
+        "id": 8,
+        "weightclassid": "mens-pound-for-pound-top-rank",
+        "weightclassname": "Men's Pound-for-Pound Top Rank",
+        "ranking": 7,
+        "fighterid": "alexander-volkanovski"
+    },
+    {
+        "id": 9,
+        "weightclassid": "mens-pound-for-pound-top-rank",
+        "weightclassname": "Men's Pound-for-Pound Top Rank",
+        "ranking": 8,
+        "fighterid": "max-holloway"
+    },
+    {
+        "id": 10,
+        "weightclassid": "mens-pound-for-pound-top-rank",
+        "weightclassname": "Men's Pound-for-Pound Top Rank",
+        "ranking": 9,
+        "fighterid": "dricus-du-plessis"
+    },
+    {
+        "id": 11,
+        "weightclassid": "mens-pound-for-pound-top-rank",
+        "weightclassname": "Men's Pound-for-Pound Top Rank",
+        "ranking": 10,
+        "fighterid": "alexandre-pantoja"
+    },
+    {
+        "id": 12,
+        "weightclassid": "mens-pound-for-pound-top-rank",
+        "weightclassname": "Men's Pound-for-Pound Top Rank",
+        "ranking": 11,
+        "fighterid": "tom-aspinall"
+    },
+    {
+        "id": 13,
+        "weightclassid": "mens-pound-for-pound-top-rank",
+        "weightclassname": "Men's Pound-for-Pound Top Rank",
+        "ranking": 12,
+        "fighterid": "israel-adesanya"
+    },
+    {
+        "id": 14,
+        "weightclassid": "mens-pound-for-pound-top-rank",
+        "weightclassname": "Men's Pound-for-Pound Top Rank",
+        "ranking": 13,
+        "fighterid": "charles-oliveira"
+    },
+    {
+        "id": 15,
+        "weightclassid": "mens-pound-for-pound-top-rank",
+        "weightclassname": "Men's Pound-for-Pound Top Rank",
+        "ranking": 14,
+        "fighterid": "sean-strickland"
+    },
+    {
+        "id": 16,
+        "weightclassid": "mens-pound-for-pound-top-rank",
+        "weightclassname": "Men's Pound-for-Pound Top Rank",
+        "ranking": 15,
+        "fighterid": "aljamain-sterling"
+    },
+    {
+        "id": 17,
+        "weightclassid": "flyweight",
+        "weightclassname": "Flyweight",
+        "ranking": 0,
+        "fighterid": "alexandre-pantoja"
+    },
+    {
+        "id": 18,
+        "weightclassid": "flyweight",
+        "weightclassname": "Flyweight",
+        "ranking": 1,
+        "fighterid": "brandon-royval"
+    },
+    {
+        "id": 19,
+        "weightclassid": "flyweight",
+        "weightclassname": "Flyweight",
+        "ranking": 2,
+        "fighterid": "brandon-moreno"
+    },
+    {
+        "id": 20,
+        "weightclassid": "flyweight",
+        "weightclassname": "Flyweight",
+        "ranking": 3,
+        "fighterid": "amir-albazi"
+    },
+    {
+        "id": 21,
+        "weightclassid": "flyweight",
+        "weightclassname": "Flyweight",
+        "ranking": 4,
+        "fighterid": "kai-kara-france"
+    },
+    {
+        "id": 22,
+        "weightclassid": "flyweight",
+        "weightclassname": "Flyweight",
+        "ranking": 5,
+        "fighterid": "tatsuro-taira"
+    },
+    {
+        "id": 23,
+        "weightclassid": "flyweight",
+        "weightclassname": "Flyweight",
+        "ranking": 6,
+        "fighterid": "muhammad-mokaev"
+    },
+    {
+        "id": 24,
+        "weightclassid": "flyweight",
+        "weightclassname": "Flyweight",
+        "ranking": 7,
+        "fighterid": "alex-perez"
+    },
+    {
+        "id": 25,
+        "weightclassid": "flyweight",
+        "weightclassname": "Flyweight",
+        "ranking": 8,
+        "fighterid": "manel-kape"
+    },
+    {
+        "id": 26,
+        "weightclassid": "flyweight",
+        "weightclassname": "Flyweight",
+        "ranking": 9,
+        "fighterid": "steve-erceg"
+    },
+    {
+        "id": 27,
+        "weightclassid": "flyweight",
+        "weightclassname": "Flyweight",
+        "ranking": 10,
+        "fighterid": "matheus-nicolau"
+    },
+    {
+        "id": 28,
+        "weightclassid": "flyweight",
+        "weightclassname": "Flyweight",
+        "ranking": 11,
+        "fighterid": "tim-elliott"
+    },
+    {
+        "id": 29,
+        "weightclassid": "flyweight",
+        "weightclassname": "Flyweight",
+        "ranking": 12,
+        "fighterid": "matt-schnell"
+    },
+    {
+        "id": 30,
+        "weightclassid": "flyweight",
+        "weightclassname": "Flyweight",
+        "ranking": 13,
+        "fighterid": "tagir-ulanbekov"
+    },
+    {
+        "id": 31,
+        "weightclassid": "flyweight",
+        "weightclassname": "Flyweight",
+        "ranking": 14,
+        "fighterid": "cody-durden"
+    },
+    {
+        "id": 32,
+        "weightclassid": "flyweight",
+        "weightclassname": "Flyweight",
+        "ranking": 15,
+        "fighterid": "assu-almabayev"
+    },
+    {
+        "id": 33,
+        "weightclassid": "bantamweight",
+        "weightclassname": "Bantamweight",
+        "ranking": 0,
+        "fighterid": "sean-omalley"
+    },
+    {
+        "id": 34,
+        "weightclassid": "bantamweight",
+        "weightclassname": "Bantamweight",
+        "ranking": 1,
+        "fighterid": "merab-dvalishvili"
+    },
+    {
+        "id": 35,
+        "weightclassid": "bantamweight",
+        "weightclassname": "Bantamweight",
+        "ranking": 2,
+        "fighterid": "cory-sandhagen"
+    },
+    {
+        "id": 36,
+        "weightclassid": "bantamweight",
+        "weightclassname": "Bantamweight",
+        "ranking": 3,
+        "fighterid": "petr-yan"
+    },
+    {
+        "id": 37,
+        "weightclassid": "bantamweight",
+        "weightclassname": "Bantamweight",
+        "ranking": 4,
+        "fighterid": "marlon-vera"
+    },
+    {
+        "id": 38,
+        "weightclassid": "bantamweight",
+        "weightclassname": "Bantamweight",
+        "ranking": 5,
+        "fighterid": "henry-cejudo"
+    },
+    {
+        "id": 39,
+        "weightclassid": "bantamweight",
+        "weightclassname": "Bantamweight",
+        "ranking": 6,
+        "fighterid": "deiveson-figueiredo"
+    },
+    {
+        "id": 40,
+        "weightclassid": "bantamweight",
+        "weightclassname": "Bantamweight",
+        "ranking": 7,
+        "fighterid": "yadong-song"
+    },
+    {
+        "id": 41,
+        "weightclassid": "bantamweight",
+        "weightclassname": "Bantamweight",
+        "ranking": 8,
+        "fighterid": "jose-aldo"
+    },
+    {
+        "id": 42,
+        "weightclassid": "bantamweight",
+        "weightclassname": "Bantamweight",
+        "ranking": 9,
+        "fighterid": "rob-font"
+    },
+    {
+        "id": 43,
+        "weightclassid": "bantamweight",
+        "weightclassname": "Bantamweight",
+        "ranking": 10,
+        "fighterid": "umar-nurmagomedov"
+    },
+    {
+        "id": 44,
+        "weightclassid": "bantamweight",
+        "weightclassname": "Bantamweight",
+        "ranking": 11,
+        "fighterid": "kyler-phillips"
+    },
+    {
+        "id": 45,
+        "weightclassid": "bantamweight",
+        "weightclassname": "Bantamweight",
+        "ranking": 12,
+        "fighterid": "mario-bautista"
+    },
+    {
+        "id": 46,
+        "weightclassid": "bantamweight",
+        "weightclassname": "Bantamweight",
+        "ranking": 13,
+        "fighterid": "dominick-cruz"
+    },
+    {
+        "id": 47,
+        "weightclassid": "bantamweight",
+        "weightclassname": "Bantamweight",
+        "ranking": 14,
+        "fighterid": "jonathan-martinez"
+    },
+    {
+        "id": 48,
+        "weightclassid": "bantamweight",
+        "weightclassname": "Bantamweight",
+        "ranking": 15,
+        "fighterid": "pedro-munhoz"
+    },
+    {
+        "id": 49,
+        "weightclassid": "featherweight",
+        "weightclassname": "Featherweight",
+        "ranking": 0,
+        "fighterid": "ilia-topuria"
+    },
+    {
+        "id": 50,
+        "weightclassid": "featherweight",
+        "weightclassname": "Featherweight",
+        "ranking": 1,
+        "fighterid": "alexander-volkanovski"
+    },
+    {
+        "id": 51,
+        "weightclassid": "featherweight",
+        "weightclassname": "Featherweight",
+        "ranking": 2,
+        "fighterid": "max-holloway"
+    },
+    {
+        "id": 52,
+        "weightclassid": "featherweight",
+        "weightclassname": "Featherweight",
+        "ranking": 3,
+        "fighterid": "brian-ortega"
+    },
+    {
+        "id": 53,
+        "weightclassid": "featherweight",
+        "weightclassname": "Featherweight",
+        "ranking": 4,
+        "fighterid": "yair-rodriguez"
+    },
+    {
+        "id": 54,
+        "weightclassid": "featherweight",
+        "weightclassname": "Featherweight",
+        "ranking": 5,
+        "fighterid": "movsar-evloev"
+    },
+    {
+        "id": 55,
+        "weightclassid": "featherweight",
+        "weightclassname": "Featherweight",
+        "ranking": 6,
+        "fighterid": "arnold-allen"
+    },
+    {
+        "id": 56,
+        "weightclassid": "featherweight",
+        "weightclassname": "Featherweight",
+        "ranking": 7,
+        "fighterid": "josh-emmett"
+    },
+    {
+        "id": 57,
+        "weightclassid": "featherweight",
+        "weightclassname": "Featherweight",
+        "ranking": 8,
+        "fighterid": "aljamain-sterling"
+    },
+    {
+        "id": 58,
+        "weightclassid": "featherweight",
+        "weightclassname": "Featherweight",
+        "ranking": 9,
+        "fighterid": "calvin-kattar"
+    },
+    {
+        "id": 59,
+        "weightclassid": "featherweight",
+        "weightclassname": "Featherweight",
+        "ranking": 10,
+        "fighterid": "giga-chikadze"
+    },
+    {
+        "id": 60,
+        "weightclassid": "featherweight",
+        "weightclassname": "Featherweight",
+        "ranking": 11,
+        "fighterid": "lerone-murphy"
+    },
+    {
+        "id": 61,
+        "weightclassid": "featherweight",
+        "weightclassname": "Featherweight",
+        "ranking": 12,
+        "fighterid": "diego-lopes"
+    },
+    {
+        "id": 62,
+        "weightclassid": "featherweight",
+        "weightclassname": "Featherweight",
+        "ranking": 13,
+        "fighterid": "bryce-mitchell"
+    },
+    {
+        "id": 63,
+        "weightclassid": "featherweight",
+        "weightclassname": "Featherweight",
+        "ranking": 14,
+        "fighterid": "dan-ige"
+    },
+    {
+        "id": 64,
+        "weightclassid": "featherweight",
+        "weightclassname": "Featherweight",
+        "ranking": 15,
+        "fighterid": "edson-barboza"
+    },
+    {
+        "id": 65,
+        "weightclassid": "lightweight",
+        "weightclassname": "Lightweight",
+        "ranking": 0,
+        "fighterid": "islam-makhachev"
+    },
+    {
+        "id": 66,
+        "weightclassid": "lightweight",
+        "weightclassname": "Lightweight",
+        "ranking": 1,
+        "fighterid": "arman-tsarukyan"
+    },
+    {
+        "id": 67,
+        "weightclassid": "lightweight",
+        "weightclassname": "Lightweight",
+        "ranking": 2,
+        "fighterid": "charles-oliveira"
+    },
+    {
+        "id": 68,
+        "weightclassid": "lightweight",
+        "weightclassname": "Lightweight",
+        "ranking": 3,
+        "fighterid": "justin-gaethje"
+    },
+    {
+        "id": 69,
+        "weightclassid": "lightweight",
+        "weightclassname": "Lightweight",
+        "ranking": 4,
+        "fighterid": "dustin-poirier"
+    },
+    {
+        "id": 70,
+        "weightclassid": "lightweight",
+        "weightclassname": "Lightweight",
+        "ranking": 5,
+        "fighterid": "mateusz-gamrot"
+    },
+    {
+        "id": 71,
+        "weightclassid": "lightweight",
+        "weightclassname": "Lightweight",
+        "ranking": 6,
+        "fighterid": "michael-chandler"
+    },
+    {
+        "id": 72,
+        "weightclassid": "lightweight",
+        "weightclassname": "Lightweight",
+        "ranking": 7,
+        "fighterid": "beneil-dariush"
+    },
+    {
+        "id": 73,
+        "weightclassid": "lightweight",
+        "weightclassname": "Lightweight",
+        "ranking": 8,
+        "fighterid": "rafael-fiziev"
+    },
+    {
+        "id": 74,
+        "weightclassid": "lightweight",
+        "weightclassname": "Lightweight",
+        "ranking": 9,
+        "fighterid": "max-holloway"
+    },
+    {
+        "id": 75,
+        "weightclassid": "lightweight",
+        "weightclassname": "Lightweight",
+        "ranking": 10,
+        "fighterid": "renato-moicano"
+    },
+    {
+        "id": 76,
+        "weightclassid": "lightweight",
+        "weightclassname": "Lightweight",
+        "ranking": 11,
+        "fighterid": "dan-hooker"
+    },
+    {
+        "id": 77,
+        "weightclassid": "lightweight",
+        "weightclassname": "Lightweight",
+        "ranking": 12,
+        "fighterid": "benoit-saint-denis"
+    },
+    {
+        "id": 78,
+        "weightclassid": "lightweight",
+        "weightclassname": "Lightweight",
+        "ranking": 13,
+        "fighterid": "jalin-turner"
+    },
+    {
+        "id": 79,
+        "weightclassid": "lightweight",
+        "weightclassname": "Lightweight",
+        "ranking": 14,
+        "fighterid": "rafael-dos-anjos"
+    },
+    {
+        "id": 80,
+        "weightclassid": "lightweight",
+        "weightclassname": "Lightweight",
+        "ranking": 15,
+        "fighterid": "bobby-green"
+    },
+    {
+        "id": 81,
+        "weightclassid": "welterweight",
+        "weightclassname": "Welterweight",
+        "ranking": 0,
+        "fighterid": "leon-edwards"
+    },
+    {
+        "id": 82,
+        "weightclassid": "welterweight",
+        "weightclassname": "Welterweight",
+        "ranking": 1,
+        "fighterid": "kamaru-usman"
+    },
+    {
+        "id": 83,
+        "weightclassid": "welterweight",
+        "weightclassname": "Welterweight",
+        "ranking": 2,
+        "fighterid": "belal-muhammad"
+    },
+    {
+        "id": 84,
+        "weightclassid": "welterweight",
+        "weightclassname": "Welterweight",
+        "ranking": 3,
+        "fighterid": "shavkat-rakhmonov"
+    },
+    {
+        "id": 85,
+        "weightclassid": "welterweight",
+        "weightclassname": "Welterweight",
+        "ranking": 4,
+        "fighterid": "colby-covington"
+    },
+    {
+        "id": 86,
+        "weightclassid": "welterweight",
+        "weightclassname": "Welterweight",
+        "ranking": 5,
+        "fighterid": "jack-della-maddalena"
+    },
+    {
+        "id": 87,
+        "weightclassid": "welterweight",
+        "weightclassname": "Welterweight",
+        "ranking": 6,
+        "fighterid": "gilbert-burns"
+    },
+    {
+        "id": 88,
+        "weightclassid": "welterweight",
+        "weightclassname": "Welterweight",
+        "ranking": 7,
+        "fighterid": "ian-garry"
+    },
+    {
+        "id": 89,
+        "weightclassid": "welterweight",
+        "weightclassname": "Welterweight",
+        "ranking": 8,
+        "fighterid": "sean-brady"
+    },
+    {
+        "id": 90,
+        "weightclassid": "welterweight",
+        "weightclassname": "Welterweight",
+        "ranking": 9,
+        "fighterid": "stephen-thompson"
+    },
+    {
+        "id": 91,
+        "weightclassid": "welterweight",
+        "weightclassname": "Welterweight",
+        "ranking": 10,
+        "fighterid": "geoff-neal"
+    },
+    {
+        "id": 92,
+        "weightclassid": "welterweight",
+        "weightclassname": "Welterweight",
+        "ranking": 11,
+        "fighterid": "joaquin-buckley"
+    },
+    {
+        "id": 93,
+        "weightclassid": "welterweight",
+        "weightclassname": "Welterweight",
+        "ranking": 12,
+        "fighterid": "neil-magny"
+    },
+    {
+        "id": 94,
+        "weightclassid": "welterweight",
+        "weightclassname": "Welterweight",
+        "ranking": 13,
+        "fighterid": "michael-page"
+    },
+    {
+        "id": 95,
+        "weightclassid": "welterweight",
+        "weightclassname": "Welterweight",
+        "ranking": 14,
+        "fighterid": "vicente-luque"
+    },
+    {
+        "id": 96,
+        "weightclassid": "welterweight",
+        "weightclassname": "Welterweight",
+        "ranking": 15,
+        "fighterid": "kevin-holland"
+    },
+    {
+        "id": 97,
+        "weightclassid": "middleweight",
+        "weightclassname": "Middleweight",
+        "ranking": 0,
+        "fighterid": "dricus-du-plessis"
+    },
+    {
+        "id": 98,
+        "weightclassid": "middleweight",
+        "weightclassname": "Middleweight",
+        "ranking": 1,
+        "fighterid": "sean-strickland"
+    },
+    {
+        "id": 99,
+        "weightclassid": "middleweight",
+        "weightclassname": "Middleweight",
+        "ranking": 2,
+        "fighterid": "israel-adesanya"
+    },
+    {
+        "id": 100,
+        "weightclassid": "middleweight",
+        "weightclassname": "Middleweight",
+        "ranking": 3,
+        "fighterid": "robert-whittaker"
+    },
+    {
+        "id": 101,
+        "weightclassid": "middleweight",
+        "weightclassname": "Middleweight",
+        "ranking": 4,
+        "fighterid": "nassourdine-imavov"
+    },
+    {
+        "id": 102,
+        "weightclassid": "middleweight",
+        "weightclassname": "Middleweight",
+        "ranking": 5,
+        "fighterid": "jared-cannonier"
+    },
+    {
+        "id": 103,
+        "weightclassid": "middleweight",
+        "weightclassname": "Middleweight",
+        "ranking": 6,
+        "fighterid": "marvin-vettori"
+    },
+    {
+        "id": 104,
+        "weightclassid": "middleweight",
+        "weightclassname": "Middleweight",
+        "ranking": 7,
+        "fighterid": "brendan-allen"
+    },
+    {
+        "id": 105,
+        "weightclassid": "middleweight",
+        "weightclassname": "Middleweight",
+        "ranking": 8,
+        "fighterid": "paulo-costa"
+    },
+    {
+        "id": 106,
+        "weightclassid": "middleweight",
+        "weightclassname": "Middleweight",
+        "ranking": 9,
+        "fighterid": "jack-hermansson"
+    },
+    {
+        "id": 107,
+        "weightclassid": "middleweight",
+        "weightclassname": "Middleweight",
+        "ranking": 10,
+        "fighterid": "roman-dolidze"
+    },
+    {
+        "id": 108,
+        "weightclassid": "middleweight",
+        "weightclassname": "Middleweight",
+        "ranking": 11,
+        "fighterid": "khamzat-chimaev"
+    },
+    {
+        "id": 109,
+        "weightclassid": "middleweight",
+        "weightclassname": "Middleweight",
+        "ranking": 12,
+        "fighterid": "caio-borralho"
+    },
+    {
+        "id": 110,
+        "weightclassid": "middleweight",
+        "weightclassname": "Middleweight",
+        "ranking": 13,
+        "fighterid": "michel-pereira"
+    },
+    {
+        "id": 111,
+        "weightclassid": "middleweight",
+        "weightclassname": "Middleweight",
+        "ranking": 14,
+        "fighterid": "anthony-hernandez"
+    },
+    {
+        "id": 112,
+        "weightclassid": "middleweight",
+        "weightclassname": "Middleweight",
+        "ranking": 15,
+        "fighterid": "chris-curtis"
+    },
+    {
+        "id": 113,
+        "weightclassid": "light-heavyweight",
+        "weightclassname": "Light Heavyweight",
+        "ranking": 0,
+        "fighterid": "alex-pereira"
+    },
+    {
+        "id": 114,
+        "weightclassid": "light-heavyweight",
+        "weightclassname": "Light Heavyweight",
+        "ranking": 1,
+        "fighterid": "jiri-prochazka"
+    },
+    {
+        "id": 115,
+        "weightclassid": "light-heavyweight",
+        "weightclassname": "Light Heavyweight",
+        "ranking": 2,
+        "fighterid": "magomed-ankalaev"
+    },
+    {
+        "id": 116,
+        "weightclassid": "light-heavyweight",
+        "weightclassname": "Light Heavyweight",
+        "ranking": 3,
+        "fighterid": "jamahal-hill"
+    },
+    {
+        "id": 117,
+        "weightclassid": "light-heavyweight",
+        "weightclassname": "Light Heavyweight",
+        "ranking": 4,
+        "fighterid": "jan-blachowicz"
+    },
+    {
+        "id": 118,
+        "weightclassid": "light-heavyweight",
+        "weightclassname": "Light Heavyweight",
+        "ranking": 5,
+        "fighterid": "aleksandar-rakic"
+    },
+    {
+        "id": 119,
+        "weightclassid": "light-heavyweight",
+        "weightclassname": "Light Heavyweight",
+        "ranking": 6,
+        "fighterid": "nikita-krylov"
+    },
+    {
+        "id": 120,
+        "weightclassid": "light-heavyweight",
+        "weightclassname": "Light Heavyweight",
+        "ranking": 7,
+        "fighterid": "volkan-oezdemir"
+    },
+    {
+        "id": 121,
+        "weightclassid": "light-heavyweight",
+        "weightclassname": "Light Heavyweight",
+        "ranking": 8,
+        "fighterid": "khalil-rountree-jr"
+    },
+    {
+        "id": 122,
+        "weightclassid": "light-heavyweight",
+        "weightclassname": "Light Heavyweight",
+        "ranking": 9,
+        "fighterid": "johnny-walker"
+    },
+    {
+        "id": 123,
+        "weightclassid": "light-heavyweight",
+        "weightclassname": "Light Heavyweight",
+        "ranking": 10,
+        "fighterid": "carlos-ulberg"
+    },
+    {
+        "id": 124,
+        "weightclassid": "light-heavyweight",
+        "weightclassname": "Light Heavyweight",
+        "ranking": 11,
+        "fighterid": "anthony-smith"
+    },
+    {
+        "id": 125,
+        "weightclassid": "light-heavyweight",
+        "weightclassname": "Light Heavyweight",
+        "ranking": 12,
+        "fighterid": "bogdan-guskov"
+    },
+    {
+        "id": 126,
+        "weightclassid": "light-heavyweight",
+        "weightclassname": "Light Heavyweight",
+        "ranking": 13,
+        "fighterid": "dominick-reyes"
+    },
+    {
+        "id": 127,
+        "weightclassid": "light-heavyweight",
+        "weightclassname": "Light Heavyweight",
+        "ranking": 14,
+        "fighterid": "azamat-murzakanov"
+    },
+    {
+        "id": 128,
+        "weightclassid": "light-heavyweight",
+        "weightclassname": "Light Heavyweight",
+        "ranking": 15,
+        "fighterid": "alonzo-menifield"
+    },
+    {
+        "id": 129,
+        "weightclassid": "heavyweight",
+        "weightclassname": "Heavyweight",
+        "ranking": 0,
+        "fighterid": "jon-jones"
+    },
+    {
+        "id": 130,
+        "weightclassid": "heavyweight",
+        "weightclassname": "Heavyweight",
+        "ranking": 1,
+        "fighterid": "tom-aspinall"
+    },
+    {
+        "id": 131,
+        "weightclassid": "heavyweight",
+        "weightclassname": "Heavyweight",
+        "ranking": 2,
+        "fighterid": "ciryl-gane"
+    },
+    {
+        "id": 132,
+        "weightclassid": "heavyweight",
+        "weightclassname": "Heavyweight",
+        "ranking": 3,
+        "fighterid": "alexander-volkov"
+    },
+    {
+        "id": 133,
+        "weightclassid": "heavyweight",
+        "weightclassname": "Heavyweight",
+        "ranking": 4,
+        "fighterid": "curtis-blaydes"
+    },
+    {
+        "id": 134,
+        "weightclassid": "heavyweight",
+        "weightclassname": "Heavyweight",
+        "ranking": 5,
+        "fighterid": "sergei-pavlovich"
+    },
+    {
+        "id": 135,
+        "weightclassid": "heavyweight",
+        "weightclassname": "Heavyweight",
+        "ranking": 6,
+        "fighterid": "stipe-miocic"
+    },
+    {
+        "id": 136,
+        "weightclassid": "heavyweight",
+        "weightclassname": "Heavyweight",
+        "ranking": 7,
+        "fighterid": "jailton-almeida"
+    },
+    {
+        "id": 137,
+        "weightclassid": "heavyweight",
+        "weightclassname": "Heavyweight",
+        "ranking": 8,
+        "fighterid": "marcin-tybura"
+    },
+    {
+        "id": 138,
+        "weightclassid": "heavyweight",
+        "weightclassname": "Heavyweight",
+        "ranking": 9,
+        "fighterid": "serghei-spivac"
+    },
+    {
+        "id": 139,
+        "weightclassid": "heavyweight",
+        "weightclassname": "Heavyweight",
+        "ranking": 10,
+        "fighterid": "tai-tuivasa"
+    },
+    {
+        "id": 140,
+        "weightclassid": "heavyweight",
+        "weightclassname": "Heavyweight",
+        "ranking": 11,
+        "fighterid": "derrick-lewis"
+    },
+    {
+        "id": 141,
+        "weightclassid": "heavyweight",
+        "weightclassname": "Heavyweight",
+        "ranking": 12,
+        "fighterid": "jairzinho-rozenstruik"
+    },
+    {
+        "id": 142,
+        "weightclassid": "heavyweight",
+        "weightclassname": "Heavyweight",
+        "ranking": 13,
+        "fighterid": "alexandr-romanov"
+    },
+    {
+        "id": 143,
+        "weightclassid": "heavyweight",
+        "weightclassname": "Heavyweight",
+        "ranking": 14,
+        "fighterid": "marcos-rogerio-de-lima"
+    },
+    {
+        "id": 144,
+        "weightclassid": "heavyweight",
+        "weightclassname": "Heavyweight",
+        "ranking": 15,
+        "fighterid": "rodrigo-nascimento-ferreira"
+    }
+]

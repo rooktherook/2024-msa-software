@@ -1,5 +1,6 @@
+using System;
 using System.Collections.Generic;
-using System.IO;
+using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
@@ -12,11 +13,6 @@ public static class DataSeeder
         using (var context = new DataContext(
             serviceProvider.GetRequiredService<DbContextOptions<DataContext>>()))
         {
-
-            if (context.Fighters.Any())
-            {
-                return;   
-            }
 
             var fighters = LoadFightersFromJson();
             foreach (var fighter in fighters)
@@ -43,6 +39,13 @@ public static class DataSeeder
                 context.Fighters.Add(fighter);
 
             }
+
+            var rankings = LoadRankingsFromJson();
+            foreach (var ranking in rankings)
+            {   
+            context.Ranks.Add(ranking);
+            }
+
             context.SaveChanges();
         }
     }
@@ -53,4 +56,10 @@ public static class DataSeeder
         var json = File.ReadAllText(path);
         return JsonConvert.DeserializeObject<List<Fighter>>(json);
     }
-}
+
+    private static List<Listranking> LoadRankingsFromJson()
+    {
+        var path = Path.Combine(Directory.GetCurrentDirectory(), "Data", "rankings.json");
+        var json = File.ReadAllText(path);
+        return JsonConvert.DeserializeObject<List<Listranking>>(json);
+    }}

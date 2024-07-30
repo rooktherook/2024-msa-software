@@ -4,4 +4,15 @@
 3. run this query on ssms ```CREATE DATABASE FighterDB```
 4. Now run backend with ```  ```
 
+# Migration commands
 
+``` 
+
+
+dotnet ef migrations add InitialCreate
+dotnet ef database update
+
+
+
+
+```
