@@ -5,10 +5,10 @@ createTheme({
     palette: {
         mode: 'light',
         primary: {
-            main: '#D01110',
+            main: '#3F3F3F',
         },
         secondary: {
-            main: '#0A0A00',
+            main: '#0B0B00',
         },
         background: {   
             default: '#EBE8E0',
@@ -27,18 +27,17 @@ createTheme({
     palette: {
         mode: 'dark',
         primary: {
-            main: '#1976d2',
+            main: '#0A0A00',
         },
         secondary: {
-            main: '#1976d2',
+            main: '#A8BBB0',
         },
         background: {
-            default: '#1976d2',
-            paper: '#1976d2',
+            default: '#3F3F3F',
         },
         text: {
-            primary: '#000000',
-            secondary: '#000000',
+            primary: '#d4af37',
+            secondary: '#d4af37',
         },
     },
 });
