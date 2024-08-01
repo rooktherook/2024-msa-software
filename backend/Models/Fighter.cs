@@ -21,5 +21,5 @@ namespace Models
         public string? LegReach { get; set; }
         public string? Id { get; set; }
         public string? Iconurl { get; set; }
-    }
+    }  
 }

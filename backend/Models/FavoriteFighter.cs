@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using DTOs;
 
 namespace Models
 {
@@ -7,10 +8,16 @@ namespace Models
     {
         [Key]
         public int Id { get; set; }
-
-        [ForeignKey("User")]
         public int UserId { get; set; }
-        public User? User { get; set; }
         public string? FighterId { get; set; }
+
+        public FavoriteFighterDTO ToDto()
+        {
+            return new FavoriteFighterDTO
+            {
+                FighterId = FighterId
+            };
+        }
+
     }
 }

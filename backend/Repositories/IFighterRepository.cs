@@ -5,9 +5,9 @@ namespace Repositories
 {
     public interface IFighterRepository
     {
-        Task AddPrediction(Prediction prediction);
         Task<IEnumerable<Fighter>> GetAllFighters();
-        Task<IEnumerable<Listranking>> GetRankings();
+        Task<IEnumerable<Rankings>> GetRankings();
+        Task<Fighter> GetFighterById(string id);
 
     }
 }

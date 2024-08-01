@@ -2,54 +2,68 @@ using Microsoft.AspNetCore.Mvc;
 using Models;
 using Repositories;
 using DTOs;
+using Mscc.GenerativeAI;
 
 [ApiController]
 [Route("api/[controller]")]
 public class PredictionController : ControllerBase
 {
-    private readonly IGeminiService _geminiService;
     private readonly IFighterRepository _fighterRepository;
+    private GoogleAI googleai;
+    private GenerativeModel gemini;
 
-    public PredictionController(IGeminiService geminiService, IFighterRepository fighterRepository)
+    public PredictionController(IFighterRepository fighterRepository)
     {
-        _geminiService = geminiService;
         _fighterRepository = fighterRepository;
+        googleai = new GoogleAI(Environment.GetEnvironmentVariable("GeminiApiKey"));
+        gemini = googleai.GenerativeModel(model: Model.Gemini15Pro);
+
+
     }
 
     [HttpPost]
     public async Task<IActionResult> PredictFight([FromBody] PredictionRequest request)
     {
-        var prompt = $"Predict me a fight between two fighters, just talk about the fight round by round at the end have a line showing the winner to parse [winner-id:(Id of the winner)]\n" +
+
+        var Fighter1 = await _fighterRepository.GetFighterById(request.Fighter1Id);
+        var Fighter2 = await _fighterRepository.GetFighterById(request.Fighter2Id);
+        var prompt = $"Predict me a fight between two fighters, just talk about the fight round by round at the end have a line showing the winner to parse [winner-id:(ID OF THE WINNER)]\n" +
                      $"Fighter 1 id: {request.Fighter1Id}\n" +
-                     $"Fighter 1 name: {request.Fighter1Name}\n" +
-                     $"Fighter 2 id: {request.Fighter2Id}\n" +
-                     $"Fighter 2 name: {request.Fighter2Name}\n" +
+                     $"Fighter 1 name: {Fighter1.Name}\n" +
+                     $"Fighter 1 id: {request.Fighter2Id}\n" +
+                     $"Fighter 2 name: {Fighter2.Name}\n" +
                      $"rounds in fight: {request.Rounds}";
 
-        var predictionText = await _geminiService.GetFightPrediction(prompt);
+        var response = gemini.GenerateContent(prompt).Result;
 
-        // Extract winner from the predictionText
-        var winnerId = ExtractWinnerId(predictionText);
+        var (winnerId, cleanedText) = ExtractWinnerId(response.Text);
 
-        var prediction = new Prediction
+        var winner = await _fighterRepository.GetFighterById(winnerId);
+
+        var prediction = new PredictionDTO
         {
-            Fighter1Id = request.Fighter1Id,
-            Fighter2Id = request.Fighter2Id,
-            Rounds = request.Rounds,
-            Text = predictionText,
-            Outcome = $"winner-id:{winnerId}"
+            Text = cleanedText,
+            WinnerName = winner?.Name ?? "Unknown"
         };
-
-        await _fighterRepository.AddPrediction(prediction);
 
         return Ok(prediction);
     }
 
-    private string ExtractWinnerId(string predictionText)
+    private (string WinnerId, string CleanedText) ExtractWinnerId(string predictionText)
     {
         var winnerTag = "[winner-id:";
         var startIndex = predictionText.IndexOf(winnerTag) + winnerTag.Length;
         var endIndex = predictionText.IndexOf("]", startIndex);
-        return predictionText.Substring(startIndex, endIndex - startIndex);
+
+        if (startIndex < winnerTag.Length || endIndex < 0)
+        {
+            return (string.Empty, predictionText);
+        }
+
+        var winnerId = predictionText.Substring(startIndex, endIndex - startIndex);
+        var cleanedText = predictionText.Remove(startIndex - winnerTag.Length, (endIndex - startIndex) + winnerTag.Length + 1);
+
+        return (winnerId, cleanedText);
     }
+
 }
