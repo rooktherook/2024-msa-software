@@ -12,7 +12,7 @@ interface IAuthContext {
     login: (username: string) => Promise<boolean>;
     signup: (username: string) => Promise<boolean>;
     logout: () => Promise<void>;
-    editUser: (name: string) => Promise<void>;
+    editUser: (updatedUserDetails: { displayName: string; aboutMe: string }) => Promise<void>;
     deleteUser: (username: string) => Promise<boolean>;
   };
 }
@@ -27,8 +27,8 @@ const initialState: IAuthContext = {
   actions: {
     login: async () => false,
     signup: async () => false,
-    logout: async () => {},
-    editUser: async () => {},
+    logout: async () => { },
+    editUser: async () => { },
     deleteUser: async () => false,
   },
 };
@@ -79,10 +79,10 @@ const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     });
   };
 
-  const editUser = async (name: string) => {
+  const editUser = async (updatedUserDetails: { displayName: string; aboutMe: string }) => {
     if (state.user) {
       try {
-        const updatedUser = { ...state.user, username: name };
+        const updatedUser = { ...state.user, ...updatedUserDetails };
         const response = await api.put(`/api/Users/edit`, updatedUser);
         if (response.data.success) {
           setState((prevState) => ({

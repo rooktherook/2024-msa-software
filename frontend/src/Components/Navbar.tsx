@@ -5,7 +5,7 @@ import { useTheme } from '../Contexts/ThemeContext';
 import { useAuth } from '../Contexts/AuthContext';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
-import LoginIcon from '@mui/icons-material/Login';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle'; 
 import OnlinePredictionIcon from '@mui/icons-material/OnlinePrediction';
 import SportsMmaIcon from '@mui/icons-material/SportsMma';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -87,7 +87,7 @@ const Navbar: React.FC = () => {
           </Button>
           <Button
             color="inherit"
-            sx={{ fontSize: 30, '&:hover': { color: '#D01110' }}}
+            sx={{ fontSize: 30, '&:hover': { color: '#D01110' } }}
             onClick={() => handleNavigation('/')}
           >
             <span style={{ color: 'red' }}>F</span>I
@@ -105,7 +105,7 @@ const Navbar: React.FC = () => {
           <IconButton color="inherit" onClick={toggleTheme} sx={{ ml: 2 }}>
             {themeMode === 'dark' ? <DarkModeIcon /> : <LightModeIcon />}
           </IconButton>
-          <Button color="inherit" startIcon={<LoginIcon />} onClick={handleLoginClick}>
+          <Button color="inherit" startIcon={<AccountCircleIcon />} onClick={handleLoginClick}>
             {authState.isLoggedIn ? authState.user?.username : 'Login'}
           </Button>
         </Box>
@@ -114,10 +114,12 @@ const Navbar: React.FC = () => {
         open={loginModalOpen}
         onClose={handleCloseLoginModal}
         isLoggedIn={authState.isLoggedIn}
+        user={authState.user}
         onLogin={authActions.login}
         onLogout={authActions.logout}
-        onUpdateName={authActions.editUser}
+        onUpdateUser={authActions.editUser}
         onSignup={authActions.signup}
+        onDelete={authActions.deleteUser}
       />
     </AppBar>
   );
