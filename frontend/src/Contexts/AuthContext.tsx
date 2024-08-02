@@ -1,5 +1,7 @@
 import React, { createContext, ReactNode, useContext, useState } from "react";
-import axios from 'axios';
+import api from '../Service/ApiService';
+
+
 
 interface IAuthContext {
   state: {
@@ -11,6 +13,7 @@ interface IAuthContext {
     signup: (username: string) => Promise<boolean>;
     logout: () => Promise<void>;
     editUser: (name: string) => Promise<void>;
+    deleteUser: (username: string) => Promise<boolean>;
   };
 }
 
@@ -26,6 +29,7 @@ const initialState: IAuthContext = {
     signup: async () => false,
     logout: async () => {},
     editUser: async () => {},
+    deleteUser: async () => false,
   },
 };
 
@@ -39,49 +43,74 @@ const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
 
   const login = async (username: string) => {
     try {
-      const response = await axios.post('/auth/signin', { username });
-      setState({
-        isLoggedIn: true,
-        user: response.data,
-      });
-      return true;
+      const response = await api.post('/api/Users/signin', { username });
+      if (response.data.success) {
+        localStorage.setItem('auth_token', username);
+        setState({
+          isLoggedIn: true,
+          user: response.data.user,
+        });
+        return true;
+      }
     } catch (error) {
       console.error("Login failed", error);
-      return false;
     }
+    return false;
   };
 
   const signup = async (username: string) => {
     try {
-      const response = await axios.post('/auth/signup', { username });
-      setState({
-        isLoggedIn: true,
-        user: response.data,
-      });
-      return true;
+      const response = await api.post('/api/Users/signup', { username });
+      if (response.data.success) {
+        return true;
+      }
     } catch (error) {
-      console.error("Login failed", error);
-      return false;
+      console.error("Signup failed", error);
     }
+    return false;
   };
 
-
   const logout = async () => {
+    localStorage.removeItem('auth_token');
     setState({
       isLoggedIn: false,
+      // Clear user data
       user: null,
     });
   };
 
   const editUser = async (name: string) => {
     if (state.user) {
-      const updatedUser = { ...state.user, username: name };
-      setState((prevState) => ({
-        ...prevState,
-        user: updatedUser,
-      }));
-      await axios.put(`/user/${state.user.id}`, updatedUser);
+      try {
+        const updatedUser = { ...state.user, username: name };
+        const response = await api.put(`/api/Users/edit`, updatedUser);
+        if (response.data.success) {
+          setState((prevState) => ({
+            ...prevState,
+            user: updatedUser,
+          }));
+        }
+      } catch (error) {
+        console.error("Failed to update user", error);
+      }
     }
+  };
+
+  const deleteUser = async (username: string) => {
+    try {
+      const response = await api.delete(`/api/Users/delete`, { data: { username } });
+      if (response.data.success) {
+        localStorage.removeItem('auth_token');
+        setState({
+          isLoggedIn: false,
+          user: null,
+        });
+        return true;
+      }
+    } catch (error) {
+      console.error("Failed to delete user", error);
+    }
+    return false;
   };
 
   return (
@@ -93,6 +122,7 @@ const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
           signup,
           logout,
           editUser,
+          deleteUser,
         },
       }}
     >

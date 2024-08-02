@@ -1,30 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Typography, Container, Box } from "@mui/material";
 import SearchBar from "../Components/Searchbar";
-
-const fighterNames = [
-  "Conor McGregor",
-  "Khabib Nurmagomedov",
-  "Jon Jones",
-  "Israel Adesanya",
-  "Stipe Miocic",
-  "Daniel Cormier",
-  "Francis Ngannou",
-  "Max Holloway",
-  "Kamaru Usman",
-  "Jorge Masvidal"
-];
+import { useDataContext } from "../Contexts/DataContext";
 
 const HomePage: React.FC = () => {
+  const { fighters } = useDataContext();
   const [searchInput, setSearchInput] = useState("");
-  const [filteredFighters, setFilteredFighters] = useState<string[]>(fighterNames);
+  const [filteredFighters, setFilteredFighters] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (fighters) {
+      const fighterNames = fighters.map(fighter => fighter.name);
+      setFilteredFighters(fighterNames);
+    }
+  }, [fighters]);
 
   const handleSearchChange = (value: string) => {
     setSearchInput(value);
-    const filtered = fighterNames.filter(name => 
-      name.toLowerCase().includes(value.toLowerCase())
-    );
-    setFilteredFighters(filtered);
+    if (fighters) {
+      const fighterNames = fighters.map(fighter => fighter.name);
+      const filtered = fighterNames.filter(name => 
+        name.toLowerCase().includes(value.toLowerCase())
+      );
+      setFilteredFighters(filtered);
+    }
   };
 
   return (

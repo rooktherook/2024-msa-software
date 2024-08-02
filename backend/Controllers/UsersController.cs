@@ -22,8 +22,9 @@ namespace Controllers
         }
 
         [HttpPost("signup")]
-        public async Task<IActionResult> SignUp([FromBody] String username)
+        public async Task<IActionResult> SignUp([FromBody] UserRequest req)
         {
+            var username = req.Username;
 
             if (null != await _repository.GetUserByUsername(username))
             {
@@ -36,8 +37,10 @@ namespace Controllers
         }
 
         [HttpPost("signin")]
-        public async Task<IActionResult> SignIn([FromBody] String username)
+        public async Task<IActionResult> SignIn([FromBody] UserRequest req)
         {
+
+            var username = req.Username;
 
             var existingUser = await _repository.GetUserByUsername(username);
             
@@ -78,8 +81,10 @@ namespace Controllers
         }
 
         [HttpDelete("delete")]
-        public async Task<IActionResult> DeleteUser([FromBody] String username)
+        public async Task<IActionResult> DeleteUser([FromBody] UserRequest req)
         {
+            var username = req.Username;
+
             var existingUser = await _repository.GetUserByUsername(username);
 
             if (existingUser != null)

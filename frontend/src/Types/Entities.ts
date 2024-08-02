@@ -19,8 +19,21 @@ interface Fighter {
     id: string;
 }
 
+interface Ranking
+{
+    id: number;
+    weightClassId: string;
+    weightClassName: string;
+    ranking: number;
+    fighterId: string;
+}
 
+interface User {
+    Username: string;
+    DisplayName: string;
+    AboutMe: string;
+}
 
 export type {
-    Fighter
+    Fighter, User, Ranking
 }

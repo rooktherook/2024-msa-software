@@ -75,8 +75,6 @@ const Navbar: React.FC = () => {
             </List>
           </Box>
         </Drawer>
-
-
         {/* Desktop Section */}
         <Box sx={{ display: 'flex', alignItems: 'center', margin: '0 auto' }}>
           <Button

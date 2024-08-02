@@ -1,32 +1,50 @@
 import React, { createContext, useState, useContext, useEffect, ReactNode } from "react";
-import {Fighter} from "../Types/Entities";
+import {Fighter, Ranking} from "../Types/Entities";
+import api from '../Service/ApiService';
+
+
 
 interface DataContextType {
   fighters: Fighter[] | null;
   fetchFighters: () => void;
+  ranking: Ranking[] | null;
+  fetchRanking: () => void;
 }
 
 const DataContext = createContext<DataContextType | undefined>(undefined);
 
 export const DataContextProvider = ({ children }: { children: ReactNode }) => {
   const [fighters, setFighters] = useState<Fighter[] | null>(null);
+  const [ranking, setRanking] = useState<Ranking[] | null>(null);
+
 
   const fetchFighters = async () => {
     try {
-      const response = await fetch("/api/fighters");
-      const data = await response.json();
-      setFighters(data);
+      const response = await api.get("/Fighters");
+      setFighters(response.data);
     } catch (error) {
       console.error("Failed to fetch fighters", error);
     }
   };
 
+
+  const fetchRanking = async () => {
+    try {
+      const response = await api.get("/Rankings");
+      setRanking(response.data); 
+    } catch (error) {
+      console.error("Failed to fetch rankings", error);
+    }
+  };
+
   useEffect(() => {
     fetchFighters();
+    fetchRanking();
   }, []);
 
+
   return (
-    <DataContext.Provider value={{ fighters, fetchFighters }}>
+    <DataContext.Provider value={{ fighters, fetchFighters , ranking, fetchRanking}}>
       {children}
     </DataContext.Provider>
   );

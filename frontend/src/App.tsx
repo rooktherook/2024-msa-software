@@ -9,7 +9,6 @@ import { DataContextProvider } from "./Contexts/DataContext";
 
 import { AuthProvider } from "./Contexts/AuthContext";
 import HomePage from "./pages/HomePage";
-import ProfilePage from "./pages/ProfilePage";
 import FighterProfilePage from "./pages/FighterProfilePage";
 import ListingPage from "./pages/ListingPage";
 import PredictionPage from "./pages/PredictionPage";
@@ -18,23 +17,22 @@ import Navbar from "./Components/Navbar";
 
 const App: React.FC = () => {
   return (
-    // <AuthProvider>
-    <DataContextProvider>
-      <ThemeProvider>
-        <CssBaseline />
-        <Router>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="profile" element={<ProfilePage />} />
-            <Route path="fighter" element={<FighterProfilePage />} />
-            <Route path="listing" element={<ListingPage />} />
-            <Route path="prediction" element={<PredictionPage />} />
-          </Routes>
-        </Router>
-      </ThemeProvider>
-    </DataContextProvider>
-    // </AuthProvider>
+    <AuthProvider>
+      <DataContextProvider>
+        <ThemeProvider>
+          <CssBaseline />
+          <Router>
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="fighter" element={<FighterProfilePage />} />
+              <Route path="listing" element={<ListingPage />} />
+              <Route path="prediction" element={<PredictionPage />} />
+            </Routes>
+          </Router>
+        </ThemeProvider>
+      </DataContextProvider>
+    </AuthProvider>
   )
 };
 
