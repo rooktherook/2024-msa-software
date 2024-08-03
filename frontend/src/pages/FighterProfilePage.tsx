@@ -3,15 +3,20 @@ import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { Box, Button, Grid, Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { Fighter } from "../Types/Entities";
 import { useDataContext } from "../Contexts/DataContext";
+import FavoriteStar from "../Components/FavoriteStar";
+import { useAuth } from "../Contexts/AuthContext";
 
 const FighterProfilePage: React.FC = () => {
   const location = useLocation();
   const { id } = useParams<{ id: string }>();
   const { fighters } = useDataContext();
+  const { state } = useAuth();
+  const { isLoggedIn } = state;
   const [fighter, setFighter] = useState<Fighter | null>(location.state?.fighter || null);
   const navigate = useNavigate();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
 
 
 
@@ -46,8 +51,6 @@ const FighterProfilePage: React.FC = () => {
           </Button>
           <Typography variant="h4">Fighter</Typography>
         </Stack>
-
-
         {/* Middle row with portrait and fighter details */}
         <Stack direction={'row'} spacing={2} alignItems="center-start" sx={{ width: '50%' }}>
           <Box
@@ -57,9 +60,14 @@ const FighterProfilePage: React.FC = () => {
             sx={{ width: '50%', objectFit: 'cover' }}
           />
           <Stack spacing={1} sx={{ textAlign: isMobile ? 'center' : 'left' }}>
-            {fighter.name && (
-              <Typography variant="h4">{fighter.name}</Typography>
-            )}
+            <Stack direction="row" spacing={1} alignItems="center">
+              {isLoggedIn && (
+                <FavoriteStar fighterId={fighter.id} />
+              )}
+              {fighter.name && (
+                <Typography variant="h4">{fighter.name}</Typography>
+              )}
+            </Stack>
             {fighter.nickname !== "Unknown" && (
               <Typography variant="h5">"{fighter.nickname}"</Typography>
             )}

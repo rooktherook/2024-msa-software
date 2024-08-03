@@ -3,11 +3,20 @@ import { Typography, Container, Box } from "@mui/material";
 
 const PredictionPage: React.FC = () => {
   return (
-    <Container>
-      <Box> 
-       <Typography variant="h4">Max vs Ilia</Typography>
-      </Box>
-    </Container>       
+    <Box
+      sx={{
+        height: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingTop: '10vh',
+        paddingBottom: '20vh',
+      }}
+    >
+
+      
+    </Box>
   );
 };
 

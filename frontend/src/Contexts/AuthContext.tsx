@@ -6,6 +6,7 @@ interface IAuthContext {
   state: {
     isLoggedIn: boolean;
     user: User | null;
+    favorites: string[];
   };
   actions: {
     login: (username: string) => Promise<boolean>;
@@ -13,17 +14,21 @@ interface IAuthContext {
     logout: () => Promise<void>;
     editUser: (updatedUserDetails: { username: string; displayName: string; aboutMe: string }) => Promise<void>;
     deleteUser: (username: string) => Promise<boolean>;
+    addFavorite: (fighterId: string) => void;
+    removeFavorite: (fighterId: string) => void;
   };
 }
 
 const initialState: IAuthContext = {
-  state: { isLoggedIn: false, user: null },
+  state: { isLoggedIn: false, user: null, favorites: [] },
   actions: {
     login: async () => false,
     signup: async () => false,
     logout: async () => {},
     editUser: async () => {},
     deleteUser: async () => false,
+    addFavorite: () => {},
+    removeFavorite: () => {},
   },
 };
 
@@ -33,6 +38,7 @@ const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [state, setState] = useState({
     isLoggedIn: false,
     user: null as User | null,
+    favorites: [] as string[],
   });
 
   const login = async (username: string) => {
@@ -40,18 +46,27 @@ const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
       const response = await api.post('/api/Users/signin', { username });
       if (response.data.success) {
         localStorage.setItem('auth_token', username);
-        console.log("Logged in as", response.data.user);
+
+        const favoritesResponse = await api.get(`/api/Favorites?username=${username}`);
+        const favoritesData = favoritesResponse.data.favorites;
+        const favoriteIds = favoritesData.map((favorite: { fighterId: string }) => favorite.fighterId);
+
         setState({
           isLoggedIn: true,
           user: response.data.user,
+          favorites: favoriteIds,
         });
-        
+
+        console.log(favoritesData);
+        console.log(favoriteIds);
+
         return true;
       }
     } catch (error) {
       console.error("Login failed", error);
     }
     return false;
+
   };
 
   const signup = async (username: string) => {
@@ -71,6 +86,7 @@ const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     setState({
       isLoggedIn: false,
       user: null,
+      favorites: [],
     });
   };
 
@@ -102,6 +118,7 @@ const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
         setState({
           isLoggedIn: false,
           user: null,
+          favorites: [],
         });
         return true;
       }
@@ -109,6 +126,20 @@ const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
       console.error("Failed to delete user", error);
     }
     return false;
+  };
+
+  const addFavorite = (fighterId: string) => {
+    setState((prevState) => ({
+      ...prevState,
+      favorites: [...prevState.favorites, fighterId],
+    }));
+  };
+
+  const removeFavorite = (fighterId: string) => {
+    setState((prevState) => ({
+      ...prevState,
+      favorites: prevState.favorites.filter(id => id !== fighterId),
+    }));
   };
 
   return (
@@ -121,6 +152,8 @@ const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
           logout,
           editUser,
           deleteUser,
+          addFavorite,
+          removeFavorite,
         },
       }}
     >
