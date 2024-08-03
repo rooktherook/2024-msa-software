@@ -1,7 +1,6 @@
 import React, { createContext, ReactNode, useContext, useState } from "react";
 import api from '../Service/ApiService';
-
-
+import { User } from "../Types/Entities";
 
 interface IAuthContext {
   state: {
@@ -12,14 +11,9 @@ interface IAuthContext {
     login: (username: string) => Promise<boolean>;
     signup: (username: string) => Promise<boolean>;
     logout: () => Promise<void>;
-    editUser: (updatedUserDetails: { displayName: string; aboutMe: string }) => Promise<void>;
+    editUser: (updatedUserDetails: { username: string; displayName: string; aboutMe: string }) => Promise<void>;
     deleteUser: (username: string) => Promise<boolean>;
   };
-}
-
-interface User {
-  id: number;
-  username: string;
 }
 
 const initialState: IAuthContext = {
@@ -27,8 +21,8 @@ const initialState: IAuthContext = {
   actions: {
     login: async () => false,
     signup: async () => false,
-    logout: async () => { },
-    editUser: async () => { },
+    logout: async () => {},
+    editUser: async () => {},
     deleteUser: async () => false,
   },
 };
@@ -46,10 +40,12 @@ const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
       const response = await api.post('/api/Users/signin', { username });
       if (response.data.success) {
         localStorage.setItem('auth_token', username);
+        console.log("Logged in as", response.data.user);
         setState({
           isLoggedIn: true,
           user: response.data.user,
         });
+        
         return true;
       }
     } catch (error) {
@@ -74,20 +70,22 @@ const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     localStorage.removeItem('auth_token');
     setState({
       isLoggedIn: false,
-      // Clear user data
       user: null,
     });
   };
 
-  const editUser = async (updatedUserDetails: { displayName: string; aboutMe: string }) => {
+  const editUser = async (data: { username: string; displayName: string; aboutMe: string }) => {
     if (state.user) {
       try {
-        const updatedUser = { ...state.user, ...updatedUserDetails };
-        const response = await api.put(`/api/Users/edit`, updatedUser);
+        const response = await api.put('/api/Users/edit', data);
         if (response.data.success) {
           setState((prevState) => ({
             ...prevState,
-            user: updatedUser,
+            user: {
+              ...prevState.user!,
+              displayName: data.displayName,
+              aboutMe: data.aboutMe,
+            },
           }));
         }
       } catch (error) {
@@ -98,7 +96,7 @@ const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
 
   const deleteUser = async (username: string) => {
     try {
-      const response = await api.delete(`/api/Users/delete`, { data: { username } });
+      const response = await api.delete('/api/Users/delete', { data: { username } });
       if (response.data.success) {
         localStorage.removeItem('auth_token');
         setState({

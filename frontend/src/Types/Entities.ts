@@ -29,9 +29,9 @@ interface Ranking
 }
 
 interface User {
-    Username: string;
-    DisplayName: string;
-    AboutMe: string;
+    username: string;
+    displayName: string;
+    aboutMe: string;
 }
 
 export type {

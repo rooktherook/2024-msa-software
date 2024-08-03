@@ -25,7 +25,7 @@ const App: React.FC = () => {
             <Navbar />
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="fighter" element={<FighterProfilePage />} />
+              <Route path="fighter/:id" element={<FighterProfilePage />} />
               <Route path="listing" element={<ListingPage />} />
               <Route path="prediction" element={<PredictionPage />} />
             </Routes>

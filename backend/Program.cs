@@ -14,7 +14,7 @@ Env.Load();
 
 // Add services to the container.
 builder.Services.AddControllers();
-var connectionString = Environment.GetEnvironmentVariable("ConnectionStringLAPTOP");
+var connectionString = Environment.GetEnvironmentVariable("ConnectionString");
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
 var logger = builder.Logging.Services.BuildServiceProvider().GetRequiredService<ILogger<Program>>();

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Dialog,
   DialogActions,
@@ -21,7 +21,6 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import CloseIcon from '@mui/icons-material/Close';
 import { User } from '../Types/Entities';
 
-
 interface LoginModalProps {
   open: boolean;
   onClose: () => void;
@@ -30,7 +29,7 @@ interface LoginModalProps {
   onLogin: (username: string) => Promise<boolean>;
   onSignup: (username: string) => Promise<boolean>;
   onLogout: () => Promise<void>;
-  onUpdateUser: (updatedUserDetails: { displayName: string; aboutMe: string }) => Promise<void>;
+  onUpdateUser: (updatedUserDetails: { username: string; displayName: string; aboutMe: string }) => Promise<void>;
   onDelete: (username: string) => Promise<boolean>;
 }
 
@@ -43,23 +42,32 @@ const LoginModal: React.FC<LoginModalProps> = ({
   onSignup,
   onLogout,
   onUpdateUser,
-  onDelete
+  onDelete,
 }) => {
-  const [username, setUsername] = useState('');
+  const [username, setUsername] = useState(user?.username || '');
+  const [displayName, setDisplayName] = useState(user?.displayName || '');
+  const [aboutMe, setAboutMe] = useState(user?.aboutMe || '');
   const [isEditing, setIsEditing] = useState(false);
-  const [deleteConfirmOpen, setDeleteConfirmOpen] = useState(false);
-  const [displayName, setDisplayName] = useState(user?.DisplayName || '');
-  const [aboutMe, setAboutMe] = useState(user?.AboutMe || '');
-
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
+  useEffect(() => {
+    if (user) {
+      setUsername(user.username || '');
+      setDisplayName(user.displayName || '');
+      setAboutMe(user.aboutMe || '');
+    }
+  }, [user]);
+
+
   const handleLogin = async () => {
     const success = await onLogin(username);
     if (success) {
-      setUsername('');
+      setUsername(user?.username || '');
+      setDisplayName(user?.displayName || '');
+      setAboutMe(user?.aboutMe || '');
       onClose();
     } else {
       setSnackbarMessage("User doesn't exist.");
@@ -79,12 +87,16 @@ const LoginModal: React.FC<LoginModalProps> = ({
   };
 
   const handleUpdateUser = async () => {
-    await onUpdateUser( { displayName, aboutMe });
+    await onUpdateUser({
+      username: user?.username || '',
+      displayName: displayName,
+      aboutMe: aboutMe,
+    });
     setIsEditing(false);
   };
 
   const handleDeleteAccount = async () => {
-    const success = await onDelete(username);
+    const success = await onDelete(user?.username || '');
     if (success) {
       onClose();
     }
@@ -93,7 +105,6 @@ const LoginModal: React.FC<LoginModalProps> = ({
   const handleSnackbarClose = () => {
     setSnackbarOpen(false);
   };
-
 
   return (
     <>
@@ -109,7 +120,9 @@ const LoginModal: React.FC<LoginModalProps> = ({
         </Alert>
       </Snackbar>
 
-      <Dialog open={open} onClose={onClose}
+      <Dialog
+        open={open}
+        onClose={onClose}
         fullScreen={isMobile}
         PaperProps={{
           sx: {
@@ -117,13 +130,12 @@ const LoginModal: React.FC<LoginModalProps> = ({
             height: isMobile ? '100%' : '400px',
             maxWidth: isMobile ? '100%' : '80%',
             maxHeight: isMobile ? '100%' : '80%',
-            margin: isMobile ? '0' : 'auto'
-          }
+            margin: isMobile ? '0' : 'auto',
+          },
         }}
       >
-        <Stack spacing={2} sx={{ height: '100%' }}>
-          {/* Horizontal Stack For Top elements. */}
-          <Stack direction="row" alignItems="center" spacing={2} sx={{ width: '100%', padding: '16px' }}>
+        <Stack spacing={2} sx={{ height: '100%', width: '100%', padding: '16px'  }}>
+          <Stack direction="row" alignItems="center" spacing={2}>
             <Box>
               <IconButton onClick={onClose}>
                 <CloseIcon />
@@ -149,18 +161,10 @@ const LoginModal: React.FC<LoginModalProps> = ({
                     </>
                   )}
                 </>
-              ) : (
-                <>
-                </>
-              )}
+              ) : null}
             </Box>
           </Stack>
-          {/* Box For Body */}
-          <Box sx={{
-            flex: 1,
-            display: 'flex',
-            flexDirection: 'column',
-          }}>
+          <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
             <DialogContent>
               <DialogContentText>
                 {isLoggedIn
@@ -170,45 +174,51 @@ const LoginModal: React.FC<LoginModalProps> = ({
               {isLoggedIn && !isEditing ? (
                 <>
                   <Typography variant="h6">Username</Typography>
-                  <Typography variant="body1">{user?.Username}</Typography>
+                  <Typography variant="body1">{user?.username}</Typography>
                   <Typography variant="h6">Display Name</Typography>
-                  <Typography variant="body1">{user?.DisplayName}</Typography>
+                  <Typography variant="body1">{user?.displayName}</Typography>
                   <Typography variant="h6">About Me</Typography>
-                  <Typography variant="body1">{user?.AboutMe}</Typography>
+                  <Typography variant="body1">{user?.aboutMe}</Typography>
                 </>
               ) : (
                 <>
-                  <TextField
-                    margin="dense"
-                    label="Username"
-                    type="text"
-                    fullWidth
-                    value={user?.Username}
-                    disabled
-                  />
-                  <TextField
-                    autoFocus
-                    margin="dense"
-                    label="Display Name"
-                    type="text"
-                    fullWidth
-                    value={user?.DisplayName}
-                    onChange={(e) => setDisplayName(e.target.value)}
-                  />
-                  <TextField
-                    margin="dense"
-                    label="About Me"
-                    type="text"
-                    fullWidth
-                    value={user?.AboutMe}
-                    onChange={(e) => setAboutMe(e.target.value)}
-                  />
+                  {!isLoggedIn && (
+                    <TextField
+                      autoFocus
+                      margin="dense"
+                      label="Username"
+                      type="text"
+                      fullWidth
+                      value={username}
+                      onChange={(e) => setUsername(e.target.value)}
+                    />
+                  )}
+                  {isLoggedIn && (
+                    <>
+                      <TextField
+                        margin="dense"
+                        label="Display Name"
+                        type="text"
+                        fullWidth
+                        value={displayName}
+                        onChange={(e) => setDisplayName(e.target.value)}
+                      />
+                      <TextField
+                        margin="dense"
+                        label="About Me"
+                        type="text"
+                        fullWidth
+                        value={aboutMe}
+                        onChange={(e) => setAboutMe(e.target.value)}
+                      />
+                    </>
+                  )}
                 </>
               )}
             </DialogContent>
           </Box>
           <Box>
-            <DialogActions>
+            <DialogActions sx={{ justifyContent: 'space-between', width: '100%' }}>
               {isLoggedIn ? (
                 <>
                   {isEditing ? (
@@ -216,7 +226,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
                       <Button onClick={handleDeleteAccount} color="error">
                         Delete Account
                       </Button>
-
+                      <Box sx={{ flexGrow: 1 }}></Box>
                       <Button onClick={handleUpdateUser} color="primary">
                         Save
                       </Button>
@@ -242,7 +252,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
             </DialogActions>
           </Box>
         </Stack>
-      </Dialog >
+      </Dialog>
     </>
   );
 };
