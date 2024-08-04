@@ -14,11 +14,8 @@ Env.Load();
 
 // Add services to the container.
 builder.Services.AddControllers();
-var connectionString = Environment.GetEnvironmentVariable("ConnectionString");
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
-var logger = builder.Logging.Services.BuildServiceProvider().GetRequiredService<ILogger<Program>>();
-logger.LogInformation("Connection String: {ConnectionString}", connectionString);
 
 // Configure DbContext before building the app
 // if (builder.Environment.IsDevelopment())
@@ -28,7 +25,7 @@ logger.LogInformation("Connection String: {ConnectionString}", connectionString)
 // }
 // else
 // {
-builder.Services.AddDbContext<DataContext>(options =>options.UseSqlServer(connectionString));
+builder.Services.AddDbContext<DataContext>(options =>options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 // }
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();

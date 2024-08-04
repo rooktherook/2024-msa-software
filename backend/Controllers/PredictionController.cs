@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using Models;
+using Microsoft.Extensions.Configuration;
 using Repositories;
 using DTOs;
 using Mscc.GenerativeAI;
@@ -12,10 +12,12 @@ public class PredictionController : ControllerBase
     private GoogleAI googleai;
     private GenerativeModel gemini;
 
-    public PredictionController(IFighterRepository fighterRepository)
+    public PredictionController(IFighterRepository fighterRepository, IConfiguration configuration)
     {
         _fighterRepository = fighterRepository;
-        googleai = new GoogleAI(Environment.GetEnvironmentVariable("GeminiApiKey"));
+        var apiKey = configuration["GeminiApiKey"];
+
+        googleai = new GoogleAI(apiKey);
         gemini = googleai.GenerativeModel(model: Model.Gemini15Pro);
 
 

@@ -56,7 +56,7 @@ const Navbar: React.FC = () => {
           <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <Button
               color="inherit"
-              sx={{ display: { xs: 'none', md: 'flex' }, marginLeft: 2, marginRight: 2, '&:hover': { color: '#D01110' } }}
+              sx={{ display: { md: 'flex' }, marginLeft: 2, marginRight: 2, '&:hover': { color: '#D01110' } }}
               startIcon={<OnlinePredictionIcon />}
               onClick={() => handleNavigation('/prediction')}
             >
@@ -71,7 +71,7 @@ const Navbar: React.FC = () => {
             </Button>
             <Button
               color="inherit"
-              sx={{ display: { xs: 'none', md: 'flex' }, marginLeft: 2, marginRight: 2, '&:hover': { color: '#D01110' } }}
+              sx={{ display: { md: 'flex' }, marginLeft: 2, marginRight: 2, '&:hover': { color: '#D01110' } }}
               startIcon={<SportsMmaIcon />}
               onClick={() => handleNavigation('/listing')}
             >

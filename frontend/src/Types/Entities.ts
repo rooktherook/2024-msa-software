@@ -16,6 +16,7 @@ interface Fighter {
     octagonDebut: string;
     reach: string;
     legReach: string;
+    iconurl: string;
     id: string;
 }
 

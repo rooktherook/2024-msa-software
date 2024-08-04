@@ -40,12 +40,14 @@ const HomePage: React.FC = () => {
   return (
     <Box
       sx={{
-        height: '100vh',
+        minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        paddingBottom: '20vh',
+        overflowY: 'auto',
+        paddingTop: '10vh',
+        paddingBottom: '30vh',
       }}
     >
       <Stack spacing={2} sx={{ width: '100%', maxWidth: '600px', alignItems: 'center' }}>
@@ -54,7 +56,7 @@ const HomePage: React.FC = () => {
             FI.ai
           </Typography>
         </Box>
-        <Box sx={{ width: '100%', maxWidth: '600px', position: 'relative' }}>
+        <Box sx={{paddingX: 8, width: '100%', maxWidth: '600px', position: 'relative' }}>
           <SearchBar
             searchInput={searchInput}
             onSearchChange={handleSearchChange}

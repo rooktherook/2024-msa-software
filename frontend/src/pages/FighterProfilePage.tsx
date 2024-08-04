@@ -34,11 +34,12 @@ const FighterProfilePage: React.FC = () => {
   return (
     <Box
       sx={{
-        height: '100vh',
+        minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
+        overflowY: 'auto',
         paddingTop: '10vh',
         paddingBottom: '20vh',
       }}
