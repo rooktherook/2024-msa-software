@@ -3,11 +3,11 @@
 
 ## Advanced Features
 - Connected to Gemini API to predict fights.
-- Deployed on Azure
+- Deployed on Azure @
+https://fifrontend-adfegcd7h8dyaab9.eastus-01.azurewebsites.net/ 
 - Lightmode / Darkmode
 
 # How to run locally
-
 
 ## Backend
 - Setup Database First
